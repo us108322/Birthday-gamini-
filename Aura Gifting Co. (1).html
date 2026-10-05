@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Gifting Co. | Personalized Romantic Gifts</title>
+    
+    <!-- Google Fonts: Playfair Display for elegant headings, Inter for clean body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for elegant, modern icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf2f8',  // very soft pink
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777', // rich rose/pink
+                            gold: '#d4af37', // subtle gold accents
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and basic reset */
+        html { scroll-behavior: smooth; }
+        body { background-color: #fdf2f8; /* brand-50 */ }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-pink-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i class="ph-fill ph-heart text-brand-500 text-3xl"></i>
+                    <span class="font-serif font-semibold text-2xl tracking-wide text-gray-900">Aura<span class="text-brand-500">Gifts</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Home</a>
+                    <a href="#featured" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Bestsellers</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">How it Works</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Track Order</a>
+                </div>
+
+                <!-- Icons & Mobile Toggle -->
+                <div class="flex items-center space-x-5">
+                    <button class="text-gray-600 hover:text-brand-500 transition-colors">
+                        <i class="ph ph-magnifying-glass text-2xl"></i>
+                    </button>
+                    <button class="text-gray-600 hover:text-brand-500 transition-colors relative">
+                        <i class="ph ph-shopping-bag text-2xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-brand-500 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">2</span>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-brand-500 transition-colors">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-pink-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Home</a>
+                <a href="#featured" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Bestsellers</a>
+                <a href="#how-it-works" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">How it Works</a>
+                <a href="#" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Track Order</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <!-- Decorative background blobs -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <span class="text-brand-600 font-semibold tracking-wider uppercase text-sm mb-4 block">Handcrafted with Love</span>
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight mb-6">
+                        Turn Your Memories Into <span class="italic text-brand-500">Masterpieces.</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0">
+                        Create unforgettable moments with personalized gifts. From glowing 3D lamps to custom musical frames, give them something uniquely theirs.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#featured" class="bg-brand-500 hover:bg-brand-600 text-white font-medium py-3 px-8 rounded-full shadow-lg shadow-brand-500/30 transition-all duration-300 transform hover:-translate-y-1 text-center">
+                            Start Customizing
+                        </a>
+                        <a href="#how-it-works" class="bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-8 rounded-full shadow-md border border-gray-100 transition-all duration-300 text-center flex items-center justify-center gap-2">
+                            <i class="ph ph-play-circle text-xl"></i> See How It Works
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image Grid -->
+                <div class="w-full lg:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop" alt="Gift Box" class="w-full h-48 md:h-64 object-cover rounded-2xl shadow-lg mt-8">
+                        <img src="https://images.unsplash.com/photo-1583089892943-e02e5bbce8f4?q=80&w=800&auto=format&fit=crop" alt="Photo Frame" class="w-full h-48 md:h-64 object-cover rounded-2xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-gray-900 mb-4">How to Create Your Perfect Gift</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Three simple steps to craft a thoughtful, personalized present that they will cherish forever.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
+                <!-- Connecting line for desktop -->
+                <div class="hidden md:block absolute top-12 left-1/6 right-1/6 h-0.5 bg-brand-100 z-0 border-t border-dashed border-brand-300 w-2/3 mx-auto"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-brand-50 rounded-full flex items-center justify-center mb-6 shadow-sm border-2 border-white group-hover:bg-brand-100 transition-colors duration-300">
+                        <i class="ph ph-image text-4xl text-brand-500"></i>
+                    </div>
+                    <div class="bg-brand-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold absolute top-0 -ml-24 border-4 border-white">1</div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Upload Photos</h3>
+                    <p class="text-gray-500 text-sm px-4">Choose your favorite memories and upload high-quality pictures directly on the product page.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-brand-50 rounded-full flex items-center justify-center mb-6 shadow-sm border-2 border-white group-hover:bg-brand-100 transition-colors duration-300">
+                        <i class="ph ph-magic-wand text-4xl text-brand-500"></i>
+                    </div>
+                    <div class="bg-brand-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold absolute top-0 -ml-24 border-4 border-white">2</div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Add Your Text</h3>
+                    <p class="text-gray-500 text-sm px-4">Write a heartfelt message, a special date, or pick a Spotify song link to be engraved or printed.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-brand-50 rounded-full flex items-center justify-center mb-6 shadow-sm border-2 border-white group-hover:bg-brand-100 transition-colors duration-300">
+                        <i class="ph ph-gift text-4xl text-brand-500"></i>
+                    </div>
+                    <div class="bg-brand-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold absolute top-0 -ml-24 border-4 border-white">3</div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">We Craft & Deliver</h3>
+                    <p class="text-gray-500 text-sm px-4">Our artisans handcraft your masterpiece and deliver it safely to your doorstep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured" class="py-20 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div class="max-w-2xl">
+                    <h2 class="font-serif text-3xl md:text-4xl text-gray-900 mb-4">Featured Keepsakes</h2>
+                    <p class="text-gray-600">Our most loved customized gifts, perfect for anniversaries, birthdays, and special milestones.</p>
+                </div>
+                <a href="#" class="mt-6 md:mt-0 text-brand-600 font-medium hover:text-brand-700 flex items-center gap-1 group">
+                    View All Products 
+                    <i class="ph ph-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop" alt="Custom Spotify Plaque" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-brand-600 shadow-sm">
+                            Bestseller
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-semibold text-gray-900">Spotify Song Plaque</h3>
+                            <span class="font-semibold text-gray-900">₹799</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-6">Clear acrylic plaque with your photo and a scannable Spotify code for your special song.</p>
+                        <button class="w-full bg-brand-50 hover:bg-brand-500 text-brand-600 hover:text-white font-medium py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                            <i class="ph ph-pencil-simple"></i> Customize Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <!-- Using an aesthetic lighting image for the lamp -->
+                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800&auto=format&fit=crop" alt="3D Acrylic Illusion Lamp" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-semibold text-gray-900">3D Photo Night Lamp</h3>
+                            <span class="font-semibold text-gray-900">₹1,299</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-6">Your favorite couple photo laser-engraved on glowing acrylic with a warm wooden base.</p>
+                        <button class="w-full bg-brand-50 hover:bg-brand-500 text-brand-600 hover:text-white font-medium py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                            <i class="ph ph-pencil-simple"></i> Customize Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1608755728617-aefab37d2edd?q=80&w=800&auto=format&fit=crop" alt="Surprise Explosion Box" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-500 px-3 py-1 rounded-full text-xs font-semibold text-white shadow-sm">
+                            New
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-semibold text-gray-900">Surprise Explosion Box</h3>
+                            <span class="font-semibold text-gray-900">₹999</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-6">A beautifully crafted multi-layered box containing 15 of your photos and hidden messages.</p>
+                        <button class="w-full bg-brand-50 hover:bg-brand-500 text-brand-600 hover:text-white font-medium py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                            <i class="ph ph-pencil-simple"></i> Customize Now
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-pink-100 pt-16 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
+                
+                <!-- Brand Col -->
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-heart text-brand-500 text-2xl"></i>
+                        <span class="font-serif font-semibold text-xl text-gray-900">Aura<span class="text-brand-500">Gifts</span></span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">
+                        Crafting personalized expressions of love. We turn your beautiful memories into tangible keepsakes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-brand-500 hover:text-white transition-colors">
+                            <i class="ph-fill ph-instagram-logo"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-brand-500 hover:text-white transition-colors">
+                            <i class="ph-fill ph-facebook-logo"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-brand-500 hover:text-white transition-colors">
+                            <i class="ph-fill ph-pinterest-logo"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Col 1 -->
+                <div>
+                    <h4 class="font-serif font-semibold text-gray-900 mb-4">Shop Categories</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-brand-600 transition-colors">Photo Frames</a></li>
+                        <li><a href="#" class="hover:text-brand-600 transition-colors">3D LED Lamps</a></li>
+                        <li><a href="#" class="hover:text-brand-600 transition-colors">Explosion Boxes</a></li>
+                        <li><a href="#" class="hover:text-brand-600 transition-colors">Personalized Jewelry</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Col 2 -->
+                <div>
+                    <h4 class="font-serif font-semibold text-gray-900 mb-4">Customer Care</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-brand-600 transition-colors">Track Order</a></li>
+                        <li><a href="#" class="hover:text-brand-600 transition-colors">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-600 transition-colors">Return & Refunds</a></li>
+                        <li><a href="#" class="hover:text-brand-600 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Col -->
+                <div>
+                    <h4 class="font-serif font-semibold text-gray-900 mb-4">Join the Family</h4>
+                    <p class="text-sm text-gray-500 mb-4">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-l-lg focus:outline-none focus:border-brand-300 text-sm">
+                        <button type="submit" class="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-r-lg transition-colors">
+                            <i class="ph ph-paper-plane-tilt"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">
+                    &copy; 2026 Aura Gifting Co. All rights reserved.
+                </p>
+                <div class="flex items-center gap-4 text-sm text-gray-400">
+                    <a href="#" class="hover:text-gray-600">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-gray-600">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('ph-x');
+                    icon.classList.add('ph-list');
+                } else {
+                    icon.classList.remove('ph-list');
+                    icon.classList.add('ph-x');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
